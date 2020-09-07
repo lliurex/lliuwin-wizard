@@ -25,8 +25,8 @@ gettext.textdomain('wizard')
 _ = gettext.gettext
 
 
-RSRC="/home/lliurex/git/lliuconf/rsrc"
-SRC="/home/lliurex/git/lliuconf/src"
+SRC="/usr/share/lliuwin"
+RSRC="%s/rsrc"%SRC
 #Translations
 WLC_MSG=_("Welcome to LliureX 19. LliureX needs some final adjustements before you can enjoy the experience")
 USR_MSG=_("First fill your username and password and set your avatar (optional)")
@@ -170,7 +170,7 @@ class wizard(QWidget):
 		lng_layout.addWidget(self.lng_locale,1,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 
 		lng_frame.setLayout(lng_layout)
-		self.box.addWidget(lng_frame,2,0,1,2,Qt.AlignCenter|Qt.AlignTop)
+		self.box.addWidget(lng_frame,2,0,1,2,Qt.AlignCenter)
 
 		self.err_label=QLabel()
 		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter)
