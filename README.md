@@ -9,4 +9,4 @@ It's simple:
  * rsrc: images
  * polkit: Action and rule for adduser
 
-Chroot to the image, install this package and put the autostart-scripts at default user's autostart folder.
+Chroot to the image and install this package. Lliurex user MUST exists, the package will install the autostart-script at /home/lliurex autostart folder.
