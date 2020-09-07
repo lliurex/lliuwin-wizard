@@ -1,0 +1,9 @@
+polkit.addRule(function(action, subject) {
+    if ((action.id == "net.lliurex.lliuconf-helper") &&
+        subject.active == true && subject.local == true {
+            return polkit.Result.YES;
+    }
+
+    return polkit.Result.NOT_HANDLED;
+});
+
