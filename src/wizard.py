@@ -165,7 +165,7 @@ class wizard(QWidget):
 		lng_layout=QGridLayout()
 		lng_layout.addWidget(QLabel(LNG_MSG),0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		self.lng_locale=QComboBox()
-		self.lng_locale.addItems(["Valencià","Español","English"])
+		self.lng_locale.addItems([_("Valencian"),_("Spanish"),_("English")])
 		self.lng_locale.addItems(locale.locale_alias)
 		lng_layout.addWidget(self.lng_locale,1,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 
@@ -259,10 +259,10 @@ class wizard(QWidget):
 
 	def _get_user_locale(self):
 		lang=self.lng_locale.currentText()
-		if lang in ["Valencià","Español","en_US.utf8"]:
-			if lang=="Valencià":
+		if lang in [_("Valencian"),_("Spanish"),_("English")]:
+			if lang==_("Valencian"):
 				lang="ca_ES.utf8@valencia"
-			elif lang=="Español":
+			elif lang==_("Spanish"):
 				lang="es_ES.utf8"
 			else:
 				lang="en_US.utf8"
