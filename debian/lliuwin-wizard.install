@@ -1,4 +1,4 @@
 src/* /usr/share/lliuwin
 rsrc/* /usr/share/lliuwin/rsrc
-polkit/net.lliurex.lliuconf-helper.rules /usr/share/polkit-1/rules.d/net.lliurex.lliuconf-helper.rules
-polkit/net.lliurex.lliuconf-helper.policy /usr/share/polkit-1/actions/net.lliurex.lliuconf-helper.policy
+polkit/net.lliurex.lliuconf-helper.rules /usr/share/polkit-1/rules.d/
+polkit/net.lliurex.lliuconf-helper.policy /usr/share/polkit-1/actions/
