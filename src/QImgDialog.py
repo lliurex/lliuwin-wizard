@@ -26,11 +26,11 @@ _ = gettext.gettext
 CANCEL=_("Cancel")
 ACCEPT=_("Accept")
 
-class QImgDialog(QWidget):
+class QImgDialog(QDialog):
 	def __init__(self):
 		super().__init__()
 		self.dbg=True
 
 	def _render(self):
-			:lay=QGridLayout()
-		
+		lay=QGridLayout()
+
