@@ -277,7 +277,7 @@ class wizard(QWidget):
 	#def _on_finish
 
 	def _on_close(self,*args):
-		cmd=["loginctrl","terminate-user","lliurex"]
+		cmd=["loginctl","terminate-user","lliurex"]
 		try:
 			subprocess.run(cmd)
 		except Exception as e:
