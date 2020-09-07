@@ -3,25 +3,17 @@ import getpass
 import sys
 import os
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
-				QDialog,QStackedWidget,QGridLayout,QTabBar,QTabWidget,QHBoxLayout,QFormLayout,QLineEdit,QComboBox,\
-				QStatusBar,QFileDialog,QDialogButtonBox,QScrollBar,QScrollArea,QCheckBox,QTableWidget,\
-				QTableWidgetItem, QFrame,QHeaderView,QTableWidgetSelectionRange,QInputDialog,QDesktopWidget
+				QDialog,QGridLayout,QLineEdit,QFileDialog,QCheckBox,QFrame
 from PyQt5 import QtGui
-from PyQt5.QtCore import QSize,pyqtSlot,Qt, QPropertyAnimation,QThread,QRect,QTimer,pyqtSignal,QSignalMapper,QProcess,QEvent
-from edupals.ui import QAnimatedStatusBar
+from PyQt5.QtCore import QSize,Qt
 import gettext
 import subprocess
-import signal
-import psutil
 import locale
-import time
-import tempfile
-from urllib.request import urlretrieve
 QString=type("")
 QInt=type(0)
 TAB_BTN_SIZE=96
 BTN_SIZE=128
-gettext.textdomain('wizard')
+gettext.textdomain('lliuwin')
 _ = gettext.gettext
 
 
@@ -174,9 +166,9 @@ class wizard(QWidget):
 
 		self.err_label=QLabel()
 		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter)
-		btn_Ko=QPushButton(_("Cancel"))
-		btn_Ko.clicked.connect(self._on_exit)
-		self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
+		#btn_Ko=QPushButton(_("Cancel"))
+		#btn_Ko.clicked.connect(self._on_exit)
+		#self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
 		btn_Ok=QPushButton(_("Continue"))
 		btn_Ok.clicked.connect(self._on_apply)
 		self.box.addWidget(btn_Ok,4,1,1,1,Qt.AlignCenter)
@@ -284,8 +276,8 @@ class wizard(QWidget):
 		self.mbox.addWidget(frm_End,0,0,1,1)
 	#def _on_finish
 
-	def _on_close():
-		cmd=["loginctrl","terminate-user","lliurex"]
+	def _on_close(self,*args):
+		cmd=["loginctl","terminate-user","lliurex"]
 		try:
 			subprocess.run(cmd)
 		except Exception as e:
