@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+case "$1" in
+   configure)
+   
+	cp /usr/share/lliuwin/autostart-scripts/lliuconf.sh /home/lliurex/.config/autostart-scripts/
+	chown lliurex:lliurex /home/lliurex/.config/autostart-scripts/lliuconf.sh
+   ;;
+
+   abort-upgrade|abort-remove|abort-deconfigure)
+	rm /home/lliurex/.config/autostart-scripts/lliuconf.sh
+   ;;
+
+   *)
+       exit 1
+   ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
