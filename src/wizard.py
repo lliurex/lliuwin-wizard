@@ -20,10 +20,10 @@ _ = gettext.gettext
 SRC="/usr/share/lliuwin"
 RSRC="%s/rsrc"%SRC
 #Translations
-WLC_MSG=_("Welcome to LliureX 19. LliureX needs some final adjustements before you can enjoy the experience")
-USR_MSG=_("First fill your username and password and set your avatar (optional)")
+WLC_MSG=_("Welcome to LliureX 19. Let's do some final adjustments")
+USR_MSG=_("Configure new account")
 AVA_MSG=_("You can also define an avatar for your user")
-LNG_MSG=_("Finally select your language from the list")
+LNG_MSG=_("Locale")
 ERR_PASS_MATCH=_("Passwords don't match")
 ERR_PASS_LEN=_("Password length must be at least 6 characters long")
 ERR_PASS_LONG=_("Password length must be 30 characters maximun")
@@ -84,7 +84,10 @@ class wizard(QWidget):
 		key=self.keymap.get(event.key(),event.text())
 		if key=="Alt":
 			self.grab=True
-		self.grabKeyboard()
+			self.grabKeyboard()
+		if key=="Super_L":
+			event.accept()
+		
 	#def eventFilter
 	
 	def keyReleaseEvent(self,event):
@@ -126,49 +129,58 @@ class wizard(QWidget):
 
 		self.box=QGridLayout()
 		self.mbox=QGridLayout()
-		wlc_msg=QLabel(WLC_MSG)
+		pxm_logo=QtGui.QPixmap("%s/logo.svg"%RSRC)
+		#wlc_msg=QLabel(WLC_MSG)
+		wlc_msg=QLabel()
+		wlc_msg.setPixmap(pxm_logo)
 		wlc_msg.setObjectName("Message")
-		self.box.addWidget(wlc_msg,0,0,1,2,Qt.AlignCenter)
+		self.box.addWidget(wlc_msg,0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		usr_frame=QFrame()
 		usr_layout=QGridLayout()
-		usr_layout.addWidget(QLabel(USR_MSG),0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
+		usr_layout.addWidget(QLabel(USR_MSG),0,0,1,3,Qt.AlignCenter|Qt.AlignBottom)
 		usr_frame.setLayout(usr_layout)
 
 		self.usr_name=QLineEdit()
 		self.usr_name.setPlaceholderText(LBL_USER)
-		usr_layout.addWidget(self.usr_name,1,1,1,1)
+		usr_layout.addWidget(self.usr_name,2,0,1,1,Qt.Alignment(0))
 		self.usr_pass=QLineEdit()
+		self.usr_pass.setEchoMode(QLineEdit.Password)
 		self.usr_pass.setPlaceholderText(LBL_PASS)
-		usr_layout.addWidget(self.usr_pass,2,1,1,1)
+		usr_layout.addWidget(self.usr_pass,3,0,1,1)
 		self.usr_pass2=QLineEdit()
 		self.usr_pass2.setPlaceholderText(LBL_PASS2)
-		usr_layout.addWidget(self.usr_pass2,3,1,1,1)
+		usr_layout.addWidget(self.usr_pass2,4,0,1,1)
 		self.chk_login=QCheckBox(LBL_LOGIN)
-		usr_layout.addWidget(self.chk_login,4,1,1,1)
-		self.box.addWidget(usr_frame,1,0,1,2,Qt.AlignCenter|Qt.AlignTop)
+		usr_layout.addWidget(self.chk_login,5,2,1,1,Qt.Alignment(1))
+		self.box.addWidget(usr_frame,2,0,1,2,Qt.AlignCenter|Qt.AlignTop)
 
 		self.usr_avatar=QPushButton()
+		self.usr_avatar.setObjectName("QPushButton")
 		icn=QtGui.QIcon(self.avatar)
 		self.usr_avatar.setIcon(icn)
-		self.usr_avatar.setIconSize(QSize(96,96))
-		usr_layout.addWidget(self.usr_avatar,1,0,3,1,Qt.AlignLeft)
+		self.usr_avatar.setIconSize(QSize(128,128))
+		usr_layout.addWidget(self.usr_avatar,2,2,2,1,Qt.Alignment(1))
 		
 		lng_frame=QFrame()
+		lng_frame.setObjectName("QFrame2")
 		lng_layout=QGridLayout()
-		lng_layout.addWidget(QLabel(LNG_MSG),0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
+		lbl_lang=QLabel(LNG_MSG)
+		lbl_lang.setStyleSheet("padding:0px;border:0px;margin:0px;margin-right:6px")
+		lbl_lang.setObjectName("QLabel")
+		lng_layout.addWidget(lbl_lang,5,0,1,1,Qt.AlignLeft)
 		self.lng_locale=QComboBox()
 		self.lng_locale.addItems([_("Valencian"),_("Spanish"),_("English")])
 		self.lng_locale.addItems(locale.locale_alias)
-		lng_layout.addWidget(self.lng_locale,1,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
+		lng_layout.addWidget(self.lng_locale,5,1,1,1,Qt.Alignment(1))
 
 		lng_frame.setLayout(lng_layout)
-		self.box.addWidget(lng_frame,2,0,1,2,Qt.AlignCenter)
+		usr_layout.addWidget(lng_frame,5,0,1,1,Qt.AlignLeft)
 
 		self.err_label=QLabel()
-		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter)
-		#btn_Ko=QPushButton(_("Cancel"))
-		#btn_Ko.clicked.connect(self._on_exit)
-		#self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
+		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
+		btn_Ko=QPushButton(_("Cancel"))
+		btn_Ko.clicked.connect(self._on_exit)
+		self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
 		btn_Ok=QPushButton(_("Continue"))
 		btn_Ok.clicked.connect(self._on_apply)
 		self.box.addWidget(btn_Ok,4,1,1,1,Qt.AlignCenter)
@@ -277,12 +289,12 @@ class wizard(QWidget):
 	#def _on_finish
 
 	def _on_close(self,*args):
-		cmd=["loginctl","terminate-user","lliurex"]
-		try:
-			subprocess.run(cmd)
-		except Exception as e:
-			print(str(e))
-			return False
+#		cmd=["loginctl","terminate-user","lliurex"]
+#		try:
+#			subprocess.run(cmd)
+#		except Exception as e:
+#			print(str(e))
+#			return False
 		self.close()
 
 	def showMessage(self,msg,status="error",height=252):
@@ -299,36 +311,48 @@ class wizard(QWidget):
 		css="""
 		#Message{
 			padding:10px;
-			margin:0px;
-			border:0px;
-			background-color:rgba(255,255,255,0.5);
+			margin:60px;
+			border:40px;
 		}
-		#PushButton:active{
-			font: 14px Roboto;
-			color:black;
-			background:none;
-			background-color:grey;
-		}	
-		#PushButton:focus{
-			background:qlineargradient(x1:0,y1:0,x2:1,y2:0,stop:0 silver,stop:1 white);
+		#QPushButton{
+			background-color:rgba(255,255,255,0);
 			border-radius:25px;
 		}
 		QFrame{
 			background-color:rgba(255,255,255,0.5);
-			padding:3px;
-			margin:3px;
+			padding:10px;
+			margin:10px;
 
 		}
 		#QFrame{
 			background-color:rgba(255,255,255,0);
-			padding:3px;
-			margin:3px;
+			padding:10px;
+			margin:10px;
+
+		}
+		#QFrame2{
+			background-color:rgba(255,255,255,0);
+			padding:0px;
+			margin:0px;
 
 		}
 		QLabel{
 			font-weight:bold;
 			background-color:transparent;
 			font-size: 20px;	
+		}
+		#QLabel{
+			font-weight:Normal;
+			background-color:transparent;
+			font-size: 14px;	
+		}
+		QLineEdit{
+			padding:3px;
+			margin:6px;
+		}
+
+		QCheckBox{
+			margin:6px;
 		}
 		"""
 		return(css)
