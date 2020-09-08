@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-07 12:16+0200\n"
+"POT-Creation-Date: 2020-09-08 18:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/QImgDialog.py:26 ../src/wizard.py:51 ../src/wizard.py:177
+#: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:181
 msgid "Cancel"
 msgstr ""
 
@@ -25,104 +25,98 @@ msgstr ""
 msgid "Accept"
 msgstr ""
 
-#: ../src/wizard.py:31
-msgid ""
-"Welcome to LliureX 19. LliureX needs some final adjustements before you can "
-"enjoy the experience"
+#: ../src/wizard.py:23
+msgid "Welcome to LliureX 19. Let's do some final adjustments"
 msgstr ""
 
-#: ../src/wizard.py:32
-msgid "First fill your username and password and set your avatar (optional)"
+#: ../src/wizard.py:24
+msgid "Configure new account"
 msgstr ""
 
-#: ../src/wizard.py:33
+#: ../src/wizard.py:25
 msgid "You can also define an avatar for your user"
 msgstr ""
 
-#: ../src/wizard.py:34
-msgid "Finally select your language from the list"
-msgstr ""
-
-#: ../src/wizard.py:35
-msgid "Passwords don't match"
-msgstr ""
-
-#: ../src/wizard.py:36
-msgid "Password length must be at least 6 characters long"
-msgstr ""
-
-#: ../src/wizard.py:37
-msgid "Password length must be 30 characters maximun"
-msgstr ""
-
-#: ../src/wizard.py:38
-msgid "User name must be at least 2 characters long"
-msgstr ""
-
-#: ../src/wizard.py:39
-msgid "User name must be at most 30 characters long"
-msgstr ""
-
-#: ../src/wizard.py:40
-msgid "Unknown error"
-msgstr ""
-
-#: ../src/wizard.py:41
-msgid "Read carefully"
-msgstr ""
-
-#: ../src/wizard.py:42
-msgid "All ready"
-msgstr ""
-
-#: ../src/wizard.py:43
-msgid "Username"
-msgstr ""
-
-#: ../src/wizard.py:44
-msgid "Password"
-msgstr ""
-
-#: ../src/wizard.py:45
-msgid "Repeat password"
-msgstr ""
-
-#: ../src/wizard.py:46
+#: ../src/wizard.py:26 ../src/wizard.py:38
 msgid "Locale"
 msgstr ""
 
-#: ../src/wizard.py:47
+#: ../src/wizard.py:27
+msgid "Passwords don't match"
+msgstr ""
+
+#: ../src/wizard.py:28
+msgid "Password length must be at least 6 characters long"
+msgstr ""
+
+#: ../src/wizard.py:29
+msgid "Password length must be 30 characters maximun"
+msgstr ""
+
+#: ../src/wizard.py:30
+msgid "User name must be at least 2 characters long"
+msgstr ""
+
+#: ../src/wizard.py:31
+msgid "User name must be at most 30 characters long"
+msgstr ""
+
+#: ../src/wizard.py:32
+msgid "Unknown error"
+msgstr ""
+
+#: ../src/wizard.py:33
+msgid "Read carefully"
+msgstr ""
+
+#: ../src/wizard.py:34
+msgid "All ready"
+msgstr ""
+
+#: ../src/wizard.py:35
+msgid "Username"
+msgstr ""
+
+#: ../src/wizard.py:36
+msgid "Password"
+msgstr ""
+
+#: ../src/wizard.py:37
+msgid "Repeat password"
+msgstr ""
+
+#: ../src/wizard.py:39
 msgid "A new user will be created. Please verify the details below are correct"
 msgstr ""
 
-#: ../src/wizard.py:48
+#: ../src/wizard.py:40
 msgid "LliureX is now configured. When ready press start"
 msgstr ""
 
-#: ../src/wizard.py:49
+#: ../src/wizard.py:41
 msgid "Enable autologin"
 msgstr ""
 
-#: ../src/wizard.py:50
+#: ../src/wizard.py:42
 msgid "Apply"
 msgstr ""
 
-#: ../src/wizard.py:52
+#: ../src/wizard.py:44
 msgid "Start"
 msgstr ""
 
-#: ../src/wizard.py:168 ../src/wizard.py:262 ../src/wizard.py:263
+#: ../src/wizard.py:172 ../src/wizard.py:266 ../src/wizard.py:267
 msgid "Valencian"
 msgstr ""
 
-#: ../src/wizard.py:168 ../src/wizard.py:262 ../src/wizard.py:265
+#: ../src/wizard.py:172 ../src/wizard.py:266 ../src/wizard.py:269
 msgid "Spanish"
 msgstr ""
 
-#: ../src/wizard.py:168 ../src/wizard.py:262
+#: ../src/wizard.py:172 ../src/wizard.py:266
 msgid "English"
 msgstr ""
 
-#: ../src/wizard.py:180
+#: ../src/wizard.py:184
 msgid "Continue"
 msgstr ""
