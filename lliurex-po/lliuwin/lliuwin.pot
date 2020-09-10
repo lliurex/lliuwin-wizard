@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 18:00+0200\n"
+"POT-Creation-Date: 2020-09-10 07:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:181
+#: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:182
 msgid "Cancel"
 msgstr ""
 
@@ -105,18 +105,18 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-#: ../src/wizard.py:172 ../src/wizard.py:266 ../src/wizard.py:267
+#: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:268
 msgid "Valencian"
 msgstr ""
 
-#: ../src/wizard.py:172 ../src/wizard.py:266 ../src/wizard.py:269
+#: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:270
 msgid "Spanish"
 msgstr ""
 
-#: ../src/wizard.py:172 ../src/wizard.py:266
+#: ../src/wizard.py:173 ../src/wizard.py:267
 msgid "English"
 msgstr ""
 
-#: ../src/wizard.py:184
+#: ../src/wizard.py:185
 msgid "Continue"
 msgstr ""

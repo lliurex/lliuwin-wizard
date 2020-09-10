@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 18:00+0200\n"
-"PO-Revision-Date: 2020-09-08 18:02+0200\n"
+"POT-Creation-Date: 2020-09-10 07:37+0200\n"
+"PO-Revision-Date: 2020-09-10 07:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:181
+#: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:182
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -28,8 +28,7 @@ msgstr "Aceptar"
 
 #: ../src/wizard.py:23
 msgid "Welcome to LliureX 19. Let's do some final adjustments"
-msgstr ""
-"El equipo de LliureX 19 te da la bienvenida. Hacen falta unos últimos ajustes"
+msgstr "El equipo de LliureX 19 te da la bienvenida. Hacen falta unos últimos ajustes"
 
 #: ../src/wizard.py:24
 msgid "Configure new account"
@@ -107,26 +106,24 @@ msgstr "Aplicar"
 msgid "Start"
 msgstr "Iniciar"
 
-#: ../src/wizard.py:172 ../src/wizard.py:266 ../src/wizard.py:267
+#: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:268
 msgid "Valencian"
 msgstr "Valenciano"
 
-#: ../src/wizard.py:172 ../src/wizard.py:266 ../src/wizard.py:269
+#: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:270
 msgid "Spanish"
 msgstr "Español"
 
-#: ../src/wizard.py:172 ../src/wizard.py:266
+#: ../src/wizard.py:173 ../src/wizard.py:267
 msgid "English"
 msgstr "Inglés"
 
-#: ../src/wizard.py:184
+#: ../src/wizard.py:185
 msgid "Continue"
 msgstr "Continuar"
 
 #~ msgid "First fill your username and password and set your avatar (optional)"
-#~ msgstr ""
-#~ "Primero indique su nombre de usuario, contraseña e imagen del usuario "
-#~ "(opcional)"
+#~ msgstr "Primero indique su nombre de usuario, contraseña e imagen del usuario (opcional)"
 
 #~ msgid "Finally select your language from the list"
 #~ msgstr "Finalmente seleccione el idioma a usar"
