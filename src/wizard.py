@@ -148,6 +148,7 @@ class wizard(QWidget):
 		self.usr_pass.setPlaceholderText(LBL_PASS)
 		usr_layout.addWidget(self.usr_pass,3,0,1,1)
 		self.usr_pass2=QLineEdit()
+		self.usr_pass2.setEchoMode(QLineEdit.Password)
 		self.usr_pass2.setPlaceholderText(LBL_PASS2)
 		usr_layout.addWidget(self.usr_pass2,4,0,1,1)
 		self.chk_login=QCheckBox(LBL_LOGIN)
@@ -179,7 +180,7 @@ class wizard(QWidget):
 		self.err_label=QLabel()
 		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		btn_Ko=QPushButton(_("Cancel"))
-		btn_Ko.clicked.connect(self._on_exit)
+		btn_Ko.clicked.connect(self._on_close)
 		self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
 		btn_Ok=QPushButton(_("Continue"))
 		btn_Ok.clicked.connect(self._on_apply)
@@ -289,12 +290,12 @@ class wizard(QWidget):
 	#def _on_finish
 
 	def _on_close(self,*args):
-#		cmd=["loginctl","terminate-user","lliurex"]
-#		try:
-#			subprocess.run(cmd)
-#		except Exception as e:
-#			print(str(e))
-#			return False
+		cmd=["loginctl","terminate-user","lliurex"]
+		try:
+			subprocess.run(cmd)
+		except Exception as e:
+			print(str(e))
+			return False
 		self.close()
 
 	def showMessage(self,msg,status="error",height=252):
@@ -339,7 +340,7 @@ class wizard(QWidget):
 		QLabel{
 			font-weight:bold;
 			background-color:transparent;
-			font-size: 20px;	
+			font-size: 18px;	
 		}
 		#QLabel{
 			font-weight:Normal;
