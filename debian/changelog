@@ -1,3 +1,9 @@
+lliuwin-wizard (1.1) bionic; urgency=medium
+
+  * Add hostname customization
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 16 Sep 2020 10:56:46 +0200
+
 lliuwin-wizard (1.0) bionic; urgency=medium
 
   * Initial release. 
