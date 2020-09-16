@@ -24,6 +24,7 @@ WLC_MSG=_("Welcome to LliureX 19. Let's do some final adjustments")
 USR_MSG=_("Configure new account")
 AVA_MSG=_("You can also define an avatar for your user")
 LNG_MSG=_("Locale")
+HOST_MSG=_("Hostname")
 ERR_PASS_MATCH=_("Passwords don't match")
 ERR_PASS_LEN=_("Password length must be at least 6 characters long")
 ERR_PASS_LONG=_("Password length must be 30 characters maximun")
@@ -152,7 +153,7 @@ class wizard(QWidget):
 		self.usr_pass2.setPlaceholderText(LBL_PASS2)
 		usr_layout.addWidget(self.usr_pass2,4,0,1,1)
 		self.chk_login=QCheckBox(LBL_LOGIN)
-		usr_layout.addWidget(self.chk_login,5,2,1,1,Qt.Alignment(1))
+		usr_layout.addWidget(self.chk_login,4,2,1,1,Qt.Alignment(1))
 		self.box.addWidget(usr_frame,2,0,1,2,Qt.AlignCenter|Qt.AlignTop)
 
 		self.usr_avatar=QPushButton()
@@ -173,14 +174,17 @@ class wizard(QWidget):
 		self.lng_locale.addItems([_("Valencian"),_("Spanish"),_("English")])
 		self.lng_locale.addItems(locale.locale_alias)
 		lng_layout.addWidget(self.lng_locale,5,1,1,1,Qt.Alignment(1))
-
 		lng_frame.setLayout(lng_layout)
 		usr_layout.addWidget(lng_frame,5,0,1,1,Qt.AlignLeft)
+		
+		self.hostname=QLineEdit()
+		self.hostname.setPlaceholderText("%s (optional)"%HOST_MSG)
+		usr_layout.addWidget(self.hostname,5,2,1,1)
 
 		self.err_label=QLabel()
 		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		btn_Ko=QPushButton(_("Cancel"))
-		btn_Ko.clicked.connect(self._on_close)
+		btn_Ko.clicked.connect(self._on_exit)
 		self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
 		btn_Ok=QPushButton(_("Continue"))
 		btn_Ok.clicked.connect(self._on_apply)
@@ -231,9 +235,13 @@ class wizard(QWidget):
 		md=QDialog()
 		md.accepted.connect(self._setConfig)
 		md.setWindowTitle(MSG_CONFIRM_TITLE)
+		hostname=self.hostname.text()
+		if hostname=="":
+			hostname="LliuWin"
 		txt="%s\n"%LBL_NEW
 		txt+="\n%s: %s"%(LBL_USER,self.usr_name.text())
 		txt+="\n%s: %s"%(LBL_LOCALE,self.lng_locale.currentText())
+		txt+="\n%s: %s"%(HOST_MSG,hostname)
 		lay=QGridLayout()
 		md.setLayout(lay)
 		lay.addWidget(QLabel("%s"%txt),0,0,1,2)
@@ -253,7 +261,10 @@ class wizard(QWidget):
 		if self.chk_login.isChecked()==True:
 			autologin=self.usr_name.text()
 		lang=self._get_user_locale()
-		cmd=['pkexec','%s/wizard_helper.sh'%SRC,self.usr_name.text(),self.usr_pass.text(),lang,autologin]
+		hostname=self.hostname.text()
+		if hostname=="":
+			hostname="LliuWin"
+		cmd=['pkexec','%s/wizard_helper.sh'%SRC,self.usr_name.text(),self.usr_pass.text(),lang,hostname,autologin]
 		try:
 			subprocess.run(cmd)
 		except Exception as e:

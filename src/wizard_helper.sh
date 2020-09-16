@@ -1,12 +1,13 @@
 #!/bin/bash
-[[ $#  -lt 2 ]] && exit 1
+[[ $#  -lt 4 ]] && exit 1
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
 USER=$1
 PASS=$2
 LANG=$3
-LOGIN=$4
+HOSTNAME=$4
+LOGIN=$5
 
 function enable_sddm_autologin()
 {
@@ -26,8 +27,15 @@ function set_locale()
 	chown $USER:$USER /home/$USER/.config/plasma-localerc
 }
 
+function set_hostname()
+{
+	[ -z $HOSTNAME ] && HOSTNAME="LliuWin"
+	hostnamectl set-hostname $HOSTNAME
+	sed -i "s/lliurexStandardPC.*/$HOSTNAME/" /etc/hosts	
+}
 
 useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
 echo "$USER:$PASS" | chpasswd
 set_locale
+set_hostname
 [[ $LOGIN != "" ]] && enable_sddm_autologin || disable_sddm_autologin
