@@ -184,7 +184,7 @@ class wizard(QWidget):
 		self.err_label=QLabel()
 		self.box.addWidget(self.err_label,3,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		btn_Ko=QPushButton(_("Cancel"))
-		btn_Ko.clicked.connect(self._on_exit)
+		btn_Ko.clicked.connect(self._on_close)
 		self.box.addWidget(btn_Ko,4,0,1,1,Qt.AlignCenter)
 		btn_Ok=QPushButton(_("Continue"))
 		btn_Ok.clicked.connect(self._on_apply)
