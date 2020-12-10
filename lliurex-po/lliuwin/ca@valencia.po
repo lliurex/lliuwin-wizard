@@ -8,21 +8,26 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-10 07:37+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-12-11 14:40+0000\n"
+"Last-Translator: Raul Rodrigo <raurodse@gmail.com>\n"
+"Language-Team: Valencian <http://weblate.lliurex.net/projects/lliuwin-wizard/"
+"lliuwin-wizard/ca@valencia/>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.1\n"
 
 #: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:182
+#, fuzzy
 msgid "Cancel"
-msgstr ""
+msgstr "Cancela"
 
 #: ../src/QImgDialog.py:27
+#, fuzzy
 msgid "Accept"
-msgstr ""
+msgstr "D'acord"
 
 #: ../src/wizard.py:23
 msgid "Welcome to LliureX 19. Let's do some final adjustments"
@@ -37,12 +42,14 @@ msgid "You can also define an avatar for your user"
 msgstr ""
 
 #: ../src/wizard.py:26 ../src/wizard.py:38
+#, fuzzy
 msgid "Locale"
-msgstr ""
+msgstr "Localitzacions"
 
 #: ../src/wizard.py:27
+#, fuzzy
 msgid "Passwords don't match"
-msgstr ""
+msgstr "Les contrasenyes no coincideixen."
 
 #: ../src/wizard.py:28
 msgid "Password length must be at least 6 characters long"
@@ -61,8 +68,9 @@ msgid "User name must be at most 30 characters long"
 msgstr ""
 
 #: ../src/wizard.py:32
+#, fuzzy
 msgid "Unknown error"
-msgstr ""
+msgstr "S'ha produït un error desconegut"
 
 #: ../src/wizard.py:33
 msgid "Read carefully"
@@ -73,16 +81,19 @@ msgid "All ready"
 msgstr ""
 
 #: ../src/wizard.py:35
+#, fuzzy
 msgid "Username"
-msgstr ""
+msgstr "Usuari"
 
 #: ../src/wizard.py:36
+#, fuzzy
 msgid "Password"
-msgstr ""
+msgstr "Contrasen&ya"
 
 #: ../src/wizard.py:37
+#, fuzzy
 msgid "Repeat password"
-msgstr ""
+msgstr "Repetiu la contrasenya"
 
 #: ../src/wizard.py:39
 msgid "A new user will be created. Please verify the details below are correct"
@@ -97,25 +108,31 @@ msgid "Enable autologin"
 msgstr ""
 
 #: ../src/wizard.py:42
+#, fuzzy
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #: ../src/wizard.py:44
+#, fuzzy
 msgid "Start"
-msgstr ""
+msgstr "Inicia"
 
 #: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:268
+#, fuzzy
 msgid "Valencian"
-msgstr ""
+msgstr "Valencià"
 
 #: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:270
+#, fuzzy
 msgid "Spanish"
-msgstr ""
+msgstr "Espanyol"
 
 #: ../src/wizard.py:173 ../src/wizard.py:267
+#, fuzzy
 msgid "English"
-msgstr ""
+msgstr "Anglés"
 
 #: ../src/wizard.py:185
+#, fuzzy
 msgid "Continue"
-msgstr ""
+msgstr "Prolongació"
