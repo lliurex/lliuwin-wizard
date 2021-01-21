@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-10 07:37+0200\n"
-"PO-Revision-Date: 2021-01-19 11:40+0000\n"
+"PO-Revision-Date: 2021-01-21 17:33+0000\n"
 "Last-Translator: Angels <gimenez_angcam@gva.es>\n"
 "Language-Team: Valencian <http://weblate.lliurex.net/projects/lliuwin-wizard/"
 "lliuwin-wizard/ca@valencia/>\n"
@@ -33,104 +33,92 @@ msgstr "Us donem la benvinguda a LliureX 19! Encara falten els últims ajustos"
 
 #: ../src/wizard.py:24
 msgid "Configure new account"
-msgstr ""
+msgstr "Configureu un compte nou"
 
 #: ../src/wizard.py:25
 msgid "You can also define an avatar for your user"
-msgstr ""
+msgstr "Podeu seleccionar un avatar per a l'usuari"
 
 #: ../src/wizard.py:26 ../src/wizard.py:38
-#, fuzzy
 msgid "Locale"
-msgstr "Localitzacions"
+msgstr "Idioma"
 
 #: ../src/wizard.py:27
-#, fuzzy
 msgid "Passwords don't match"
-msgstr "Les contrasenyes no coincideixen."
+msgstr "Les contrasenyes no coincideixen"
 
 #: ../src/wizard.py:28
 msgid "Password length must be at least 6 characters long"
-msgstr ""
+msgstr "La contrasenya ha de tindre 6 caràcters com a mínim"
 
 #: ../src/wizard.py:29
 msgid "Password length must be 30 characters maximun"
-msgstr ""
+msgstr "La contrasenya ha de tindre 30 caràcters com a màxim"
 
 #: ../src/wizard.py:30
 msgid "User name must be at least 2 characters long"
-msgstr ""
+msgstr "El nom d'usuari ha de tindre com a mínim 2 caràcters"
 
 #: ../src/wizard.py:31
 msgid "User name must be at most 30 characters long"
-msgstr ""
+msgstr "El nom d'usuari ha de tindre com a màxim 30 caràcters"
 
 #: ../src/wizard.py:32
-#, fuzzy
 msgid "Unknown error"
 msgstr "S'ha produït un error desconegut"
 
 #: ../src/wizard.py:33
 msgid "Read carefully"
-msgstr ""
+msgstr "Llegiu amb deteniment"
 
 #: ../src/wizard.py:34
 msgid "All ready"
-msgstr ""
+msgstr "Tot preparat"
 
 #: ../src/wizard.py:35
-#, fuzzy
 msgid "Username"
 msgstr "Usuari"
 
 #: ../src/wizard.py:36
-#, fuzzy
 msgid "Password"
-msgstr "Contrasen&ya"
+msgstr "Contrasenya"
 
 #: ../src/wizard.py:37
-#, fuzzy
 msgid "Repeat password"
 msgstr "Repetiu la contrasenya"
 
 #: ../src/wizard.py:39
 msgid "A new user will be created. Please verify the details below are correct"
-msgstr ""
+msgstr "Es crearà l'usuari. Verifiqueu que les dades són correctes"
 
 #: ../src/wizard.py:40
 msgid "LliureX is now configured. When ready press start"
-msgstr ""
+msgstr "LliureX ja està configurat. Pulseu \"Inicia\" per a continuar"
 
 #: ../src/wizard.py:41
 msgid "Enable autologin"
-msgstr ""
+msgstr "Activació de l'inici automàtic"
 
 #: ../src/wizard.py:42
-#, fuzzy
 msgid "Apply"
-msgstr "Aplicar"
+msgstr "Aplica"
 
 #: ../src/wizard.py:44
-#, fuzzy
 msgid "Start"
 msgstr "Inicia"
 
 #: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:268
-#, fuzzy
 msgid "Valencian"
 msgstr "Valencià"
 
 #: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:270
-#, fuzzy
 msgid "Spanish"
 msgstr "Espanyol"
 
 #: ../src/wizard.py:173 ../src/wizard.py:267
-#, fuzzy
 msgid "English"
 msgstr "Anglés"
 
 #: ../src/wizard.py:185
-#, fuzzy
 msgid "Continue"
-msgstr "Prolongació"
+msgstr "Continua"
