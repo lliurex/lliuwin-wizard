@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-10 07:37+0200\n"
-"PO-Revision-Date: 2021-01-21 17:33+0000\n"
+"PO-Revision-Date: 2021-02-23 08:40+0000\n"
 "Last-Translator: Angels <gimenez_angcam@gva.es>\n"
 "Language-Team: Valencian <http://weblate.lliurex.net/projects/lliuwin-wizard/"
 "lliuwin-wizard/ca@valencia/>\n"
@@ -65,15 +65,15 @@ msgstr "El nom d'usuari ha de tindre com a màxim 30 caràcters"
 
 #: ../src/wizard.py:32
 msgid "Unknown error"
-msgstr "S'ha produït un error desconegut"
+msgstr "S'ha produït un error desconegut."
 
 #: ../src/wizard.py:33
 msgid "Read carefully"
-msgstr "Llegiu amb deteniment"
+msgstr "Llegiu amb deteniment."
 
 #: ../src/wizard.py:34
 msgid "All ready"
-msgstr "Tot preparat"
+msgstr "Ja està tot preparat."
 
 #: ../src/wizard.py:35
 msgid "Username"
@@ -89,11 +89,11 @@ msgstr "Repetiu la contrasenya"
 
 #: ../src/wizard.py:39
 msgid "A new user will be created. Please verify the details below are correct"
-msgstr "Es crearà l'usuari. Verifiqueu que les dades són correctes"
+msgstr "Es crearà l'usuari. Verifiqueu que les dades són correctes."
 
 #: ../src/wizard.py:40
 msgid "LliureX is now configured. When ready press start"
-msgstr "LliureX ja està configurat. Pulseu \"Inicia\" per a continuar"
+msgstr "LliureX ja està configurat. Pulseu \"Inicia\" per a continuar."
 
 #: ../src/wizard.py:41
 msgid "Enable autologin"
