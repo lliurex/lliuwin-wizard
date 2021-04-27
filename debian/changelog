@@ -1,3 +1,9 @@
+lliuwin-wizard (1.2,1) focal; urgency=medium
+
+  * First focal release 
+
+ -- Juanma1980 <juanma1980@gmail.com>  Tue, 27 Apr 2021 16:29:05 +0200
+
 lliuwin-wizard (1.2) bionic; urgency=medium
 
   * Add hostname customization
