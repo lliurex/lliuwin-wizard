@@ -1,15 +1,33 @@
 #!/bin/sh
 
+CONFDIR=/usr/lib/sddm/sddm.conf.d
+CONFFILE=80-${USER}.conf
+USER=${USER}
 set -e
 case "$1" in
    configure)
-   
-	cp /usr/share/lliuwin/autostart-scripts/lliuconf.sh /home/lliurex/.config/autostart-scripts/
-	chown lliurex:lliurex /home/lliurex/.config/autostart-scripts/lliuconf.sh
+	if [[ $(usermod ${USER} 2>/dev/null|| echo $?) == 6 ]]; 
+	then 
+		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${USER}
+	fi
+	mkdir -p /home/${USER}/.config/autostart-scripts/ 2>/dev/null
+	cp /usr/share/lliuwin/autostart-scripts/lliuconf.sh /home/${USER}/.config/autostart-scripts/
+	chown ${USER}:${USER} /home/${USER}/.config/autostart-scripts/lliuconf.sh
+	chmod 755 /home/${USER}/.config/autostart-scripts/lliuconf.sh
+	#Modify sddm.conf
+	WRKFILE=${CONFDIR}/${CONFFILE}
+	sed -i "s/User=.*/User=${USER}/g" $WRKFILE 
+	#Force X11 session
+	sed -i "s/Session=.*/Session=plasma/g" $WRKFILE 
    ;;
 
    abort-upgrade|abort-remove|abort-deconfigure)
-	rm /home/lliurex/.config/autostart-scripts/lliuconf.sh
+	rm /home/${USER}/.config/autostart-scripts/lliuconf.sh
+	#Modify sddm.conf
+	WRKFILE=${CONFDIR}/${CONFFILE}
+	sed -i "s/User=.*/User=/g" $WRKFILE 
+	#Disable X11 session
+	sed -i "s/Session=.*/Session=/g" $WRKFILE 
    ;;
 
    *)
