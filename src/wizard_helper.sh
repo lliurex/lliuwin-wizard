@@ -13,12 +13,16 @@ function enable_sddm_autologin()
 {
 	WRKFILE=${CONFDIR}/${CONFFILE}
 	sed -i "s/User=.*/User=$LOGIN/g" $WRKFILE 
+	#Force X11 session
+	sed -i "s/Session=.*/Session=plasma/g" $WRKFILE 
 }
 
 function disable_sddm_autologin()
 {
 	WRKFILE=${CONFDIR}/${CONFFILE}
 	sed -i "s/User=.*/User=/g" $WRKFILE 
+	#Unset X11 
+	sed -i "s/Session=.*/Session=/g" $WRKFILE 
 }
 
 function set_locale()
