@@ -10,6 +10,18 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ --with llxsrc,i18n
+	dh $@ --with llxsrc,i18n,systemd
+
+override_dh_installsystemd:
+
+	dh_installsystemd --name=lliuboot
+
+override_dh_systemd_enable:
+        
+	dh_systemd_enable --name=lliuboot
+	
+override_dh_systemd_start:
+
+	dh_systemd_start --name=lliuboot
 
 
