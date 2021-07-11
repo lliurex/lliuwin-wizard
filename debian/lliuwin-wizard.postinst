@@ -1,7 +1,7 @@
 #!/bin/sh
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
-CONFFILE=80-${USER}.conf
+CONFFILE=80-lliurex.conf
 USER=${USER}
 set -e
 case "$1" in
