@@ -3,6 +3,7 @@
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
 LLIUWIN_USER=lliurex 
+AUTOSTART=lliuwin-wizard.desktop
 set -e
 case "$1" in
    configure)
@@ -10,14 +11,14 @@ case "$1" in
 	then 
 		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${LLIUWIN_USER}
 	fi
-	mkdir -p /home/${LLIUWIN_USER}/.config/autostart-scripts/ 2>/dev/null
-	cp /usr/share/lliuwin/autostart-scripts/lliuconf.sh /home/${LLIUWIN_USER}/.config/autostart-scripts/
-	chown ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
-	chmod 755 /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
+	#mkdir -p /home/${LLIUWIN_USER}/.config/autostart-scripts/ 2>/dev/null
+	#cp /usr/share/lliuwin/autostart-scripts/lliuconf.sh /home/${LLIUWIN_USER}/.config/autostart-scripts/
+	#chown ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
+	#chmod 755 /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
 	mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
-	cp /usr/share/lliuwin/autostart/lliuwin-wizard.desktop /home/${LLIUWIN_USER}/.config/autostart/
-	chown ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}/.config/autostart/lliuwin-wizard.desktop
-	chmod 655 /home/${LLIUWIN_USER}/.config/autostart/lliuwin-wizard.desktop
+	cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
+	chown -R ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}/.config/autostart
+	chmod 655 /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
 	#Modify sddm.conf
 	WRKFILE=${CONFDIR}/${CONFFILE}
 	sed -i "s/User=.*/User=${LLIUWIN_USER}/g" $WRKFILE 
@@ -26,8 +27,8 @@ case "$1" in
    ;;
 
    abort-upgrade|abort-remove|abort-deconfigure)
-	rm /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
-	rm /home/${LLIUWIN_USER}/.config/autostart/lliuwin-wizard.desktop
+	#rm /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
+	rm /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
 	#Modify sddm.conf
 	WRKFILE=${CONFDIR}/${CONFFILE}
 	sed -i "s/User=.*/User=/g" $WRKFILE 
