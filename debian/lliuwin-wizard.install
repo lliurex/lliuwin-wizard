@@ -1,5 +1,6 @@
 src/* /usr/share/lliuwin
 rsrc/* /usr/share/lliuwin/rsrc
-autostart-scripts/ /usr/share/lliuwin
+#autostart-scripts/ /usr/share/lliuwin
+autostart/ /usr/share/lliuwin
 polkit/net.lliurex.lliuconf-helper.rules /usr/share/polkit-1/rules.d/
 polkit/net.lliurex.lliuconf-helper.policy /usr/share/polkit-1/actions/
