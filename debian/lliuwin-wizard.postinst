@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
