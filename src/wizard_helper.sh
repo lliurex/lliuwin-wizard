@@ -64,4 +64,5 @@ useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USE
 echo "$USER:$PASS" | chpasswd
 set_locale
 set_hostname
+rm /home/lliurex/.config/autostart/lliuwin-wizard.desktop 2>/dev/null
 [[ $LOGIN != "" ]] && enable_sddm_autologin || disable_sddm_autologin
