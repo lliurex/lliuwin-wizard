@@ -1,5 +1,5 @@
 #!/bin/bash
-#[[ $#  -lt 4 ]] && exit 1
+[[ $#  -lt 4 ]] && exit 1
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
@@ -39,11 +39,11 @@ function disable_sddm_autologin()
 	sed -i "s/User=.*/User=/g" $WRKFILE 
 	#Unset X11 
 	sed -i "s/Session=.*/Session=/g" $WRKFILE 
-	if [ ! -e $WRKFILE2 ]
+	if [ -e $WRKFILE2 ]
 	then
-		sed -i "s/User=.*/User=/g" $WRKFILE 
+		sed -i "s/User=.*/User=/g" $WRKFILE2
 		#Unset X11 
-		sed -i "s/Session=.*/Session=/g" $WRKFILE 
+		sed -i "s/Session=.*/Session=/g" $WRKFILE2
 	fi
 }
 
@@ -60,8 +60,8 @@ function set_hostname()
 	sed -i "s/lliurexStandardPC.*/$HOSTNAME/" /etc/hosts	
 }
 
-#useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
-#echo "$USER:$PASS" | chpasswd
-#set_locale
-#set_hostname
+useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
+echo "$USER:$PASS" | chpasswd
+set_locale
+set_hostname
 [[ $LOGIN != "" ]] && enable_sddm_autologin || disable_sddm_autologin
