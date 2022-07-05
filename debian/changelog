@@ -1,4 +1,4 @@
-lliuwin-wizard (2.1.0) lliurex22; urgency=medium
+lliuwin-wizard (2.1.1) lliurex22; urgency=medium
 
   * SDDM autologin managed by /etc/sddm.conf.d
 
