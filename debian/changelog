@@ -1,3 +1,9 @@
+lliuwin-wizard (2.1.0) lliurex22; urgency=medium
+
+  * SDDM autologin managed by /etc/sddm.conf.d
+
+ -- Juanma1980 <juanma1980@gmail.com>  Tue, 05 Jul 2022 18:33:10 +0200
+
 lliuwin-wizard (2.0.3) focal; urgency=medium
 
   * First focal release 
