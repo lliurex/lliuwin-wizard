@@ -8,3 +8,4 @@ Exec=python3 /usr/share/lliuwin-wizard/main.py
 StartupNotify=false
 Terminal=false
 Hidden=false
+NoDisplay=true

@@ -1,8 +1,10 @@
 #!/bin/bash
-[[ $#  -lt 4 ]] && exit 1
+#[[ $#  -lt 4 ]] && exit 1
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
+CONFDIR2=/etc/sddm.conf.d
+CONFFILE2=kde_settings.conf
 USER=$1
 PASS=$2
 LANG=$3
@@ -12,17 +14,37 @@ LOGIN=$5
 function enable_sddm_autologin()
 {
 	WRKFILE=${CONFDIR}/${CONFFILE}
+	WRKFILE2=${CONFDIR2}/${CONFFILE2}
 	sed -i "s/User=.*/User=$LOGIN/g" $WRKFILE 
 	#Force X11 session
 	sed -i "s/Session=.*/Session=plasma/g" $WRKFILE 
+	if [ -e $WRKFILE2 ]
+	then
+		sed -i "s/User=.*/User=$LOGIN/g" $WRKFILE2
+		#Force X11 session
+		sed -i "s/Session=.*/Session=plasma/g" $WRKFILE2
+	else
+		mkdir $CONFDIR2 > /dev/null
+		echo "[Autologin]" > $WRKFILE2
+		echo "Relogin=false" >> $WRKFILE2
+		echo "Session=plasma" >> $WRKFILE2
+		echo "User=$LOGIN" >> $WRKFILE2
+	fi
 }
 
 function disable_sddm_autologin()
 {
 	WRKFILE=${CONFDIR}/${CONFFILE}
+	WRKFILE2=${CONFDIR2}/${CONFFILE2}
 	sed -i "s/User=.*/User=/g" $WRKFILE 
 	#Unset X11 
 	sed -i "s/Session=.*/Session=/g" $WRKFILE 
+	if [ ! -e $WRKFILE2 ]
+	then
+		sed -i "s/User=.*/User=/g" $WRKFILE 
+		#Unset X11 
+		sed -i "s/Session=.*/Session=/g" $WRKFILE 
+	fi
 }
 
 function set_locale()
@@ -38,8 +60,8 @@ function set_hostname()
 	sed -i "s/lliurexStandardPC.*/$HOSTNAME/" /etc/hosts	
 }
 
-useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
-echo "$USER:$PASS" | chpasswd
-set_locale
-set_hostname
+#useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
+#echo "$USER:$PASS" | chpasswd
+#set_locale
+#set_hostname
 [[ $LOGIN != "" ]] && enable_sddm_autologin || disable_sddm_autologin
