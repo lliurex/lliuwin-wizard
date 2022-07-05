@@ -27,8 +27,8 @@ msgid "Accept"
 msgstr "Aceptar"
 
 #: ../src/wizard.py:23
-msgid "Welcome to LliureX 19. Let's do some final adjustments"
-msgstr "El equipo de LliureX 19 te da la bienvenida. Hacen falta unos últimos ajustes"
+msgid "Welcome to LliureX 21. Let's do some final adjustments"
+msgstr "El equipo de LliureX 21 te da la bienvenida. Hacen falta unos últimos ajustes"
 
 #: ../src/wizard.py:24
 msgid "Configure new account"
