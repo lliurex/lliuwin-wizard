@@ -1,4 +1,10 @@
-lliuwin-wizard (2.1.2) lliurex22; urgency=medium
+lliuwin-wizard (2.2) lliurex22; urgency=medium
+
+  * Llx22 Look and Feel 
+
+ -- Juanma1980 <juanma1980@gmail.com>  Wed, 06 Jul 2022 09:29:31 +0200
+
+lliuwin-wizard (2.1.2) focal; urgency=medium
 
   * SDDM autologin managed by /etc/sddm.conf.d
 
