@@ -1,0 +1,10 @@
+LLIUWIN_USER=lliurex 
+LLIUWIN_SESSION=plasma
+#rm /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
+rm /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
+#Modify sddm.conf
+WRKFILE=${CONFDIR}/${CONFFILE}
+sed -i "s/User=${LLIUWIN_USER}/User=/g" $WRKFILE 
+#Disable X11 session
+sed -i "s/Session=${LLIUWIN_SESSION}/Session=/g" $WRKFILE 
+exit 0
