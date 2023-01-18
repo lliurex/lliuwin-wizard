@@ -9,7 +9,7 @@ set -e
 rm /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
 #Modify sddm.conf
 WRKFILE=${CONFDIR}/${CONFFILE}
-sed -i "s/User=${LLIUWIN_USER}/User=/g" $WRKFILE 
+sed -i "s/User=${LLIUWIN_USER}/#User=/g" $WRKFILE 
 #Disable X11 session
-sed -i "s/Session=${LLIUWIN_SESSION}/Session=/g" $WRKFILE 
+sed -i "s/Session=${LLIUWIN_SESSION}/#Session=/g" $WRKFILE 
 exit 0
