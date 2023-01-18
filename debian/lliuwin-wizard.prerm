@@ -1,6 +1,11 @@
+#!/bin/bash
+
+CONFDIR=/usr/lib/sddm/sddm.conf.d
+CONFFILE=80-lliurex.conf
 LLIUWIN_USER=lliurex 
 LLIUWIN_SESSION=plasma
-#rm /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
+AUTOSTART=lliuwin-wizard.desktop
+set -e
 rm /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
 #Modify sddm.conf
 WRKFILE=${CONFDIR}/${CONFFILE}
