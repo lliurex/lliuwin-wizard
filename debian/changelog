@@ -1,3 +1,9 @@
+lliuwin-wizard (2.3) focal; urgency=medium
+
+  * Force uncomment settings for autostart
+
+ -- Juanma1980 <juanma1980@gmail.com>  Wed, 18 Jan 2023 09:21:47 +0100
+
 lliuwin-wizard (2.2) lliurex22; urgency=medium
 
   * Llx22 Look and Feel 
