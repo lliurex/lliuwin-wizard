@@ -22,9 +22,9 @@ case "$1" in
 	chmod 655 /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
 	#Modify sddm.conf
 	WRKFILE=${CONFDIR}/${CONFFILE}
-	sed -E -i "s/^#{0,1}User=.*/User=${LLIUWIN_USER}/g" $WRKFILE 
+	sed -E -i "s/^#{0,1}User=.*/#User=${LLIUWIN_USER}/g" $WRKFILE 
 	#Force X11 session
-	sed -E -i "s/^#{0,1}Session=.*/Session=${LLIUWIN_SESSION}/g" $WRKFILE 
+	sed -E -i "s/^#{0,1}Session=.*/#Session=${LLIUWIN_SESSION}/g" $WRKFILE 
    ;;
 
    abort-upgrade|abort-remove|abort-deconfigure)
