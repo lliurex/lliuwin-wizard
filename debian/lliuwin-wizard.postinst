@@ -18,8 +18,8 @@ case "$1" in
 	#chmod 755 /home/${LLIUWIN_USER}/.config/autostart-scripts/lliuconf.sh
 	mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
 	cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
-	chown -R ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}/.config/autostart
 	chmod 655 /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
+	chown -R ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}
 	#Modify sddm.conf
 	WRKFILE=${CONFDIR}/${CONFFILE}
 	sed -E -i "s/^#{0,1}User=.*/User=${LLIUWIN_USER}/g" $WRKFILE 
