@@ -2,7 +2,7 @@
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
-LLIUWIN_USER=lliurex 
+LLIUWIN_USER=lliuwin
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
