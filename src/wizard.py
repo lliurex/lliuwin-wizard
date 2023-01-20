@@ -43,6 +43,7 @@ LBL_LOGIN=_("Enable autologin")
 ACCEPT=_("Apply")
 CANCEL=_("Cancel")
 START=_("Start")
+USER="lliuwin"
 
 class wizard(QWidget):
 	def __init__(self):
@@ -302,7 +303,7 @@ class wizard(QWidget):
 	#def _on_finish
 
 	def _on_close(self,*args):
-		cmd=["loginctl","terminate-user","lliurex"]
+		cmd=["loginctl","terminate-user",USER]
 		try:
 			subprocess.run(cmd)
 		except Exception as e:
