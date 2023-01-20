@@ -6,7 +6,7 @@ LLIUWIN_USER=lliurex
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
-rm /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
+rm  -f /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART || echo ""
 #Modify sddm.conf
 WRKFILE=${CONFDIR}/${CONFFILE}
 sed -i "s/User=${LLIUWIN_USER}/#User=/g" $WRKFILE 
