@@ -66,4 +66,4 @@ set_locale
 set_hostname
 rm /home/lliurex/.config/autostart/lliuwin-wizard.desktop 2>/dev/null
 [[ $LOGIN != "" ]] && enable_sddm_autologin || disable_sddm_autologin
-apt-get remove lliuwin-wizard 2>/dev/null
+apt-get remove -y lliuwin-wizard 2>/dev/null
