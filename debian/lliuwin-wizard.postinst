@@ -6,12 +6,9 @@ LLIUWIN_USER=lliuwin
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
-echo "****"
-echo $1
-echo "****"
 
 case "$1" in
-   install)
+   configure)
 	if [[ $(usermod ${LLIUWIN_USER} 2>/dev/null|| echo $?) == 6 ]]; 
 	then 
 		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${LLIUWIN_USER}
