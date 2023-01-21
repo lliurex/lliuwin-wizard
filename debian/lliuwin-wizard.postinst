@@ -6,11 +6,17 @@ LLIUWIN_USER=lliuwin
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
+echo "****"
+echo $1
+echo "****"
+
 case "$1" in
    install)
 	if [[ $(usermod ${LLIUWIN_USER} 2>/dev/null|| echo $?) == 6 ]]; 
 	then 
 		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${LLIUWIN_USER}
+	else
+		exit 0
 	fi
 	mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
 	cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
