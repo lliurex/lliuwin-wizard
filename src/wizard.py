@@ -20,7 +20,7 @@ _ = gettext.gettext
 SRC="/usr/share/lliuwin"
 RSRC=os.path.join(SRC,"rsrc")
 #Translations
-WLC_MSG=_("Welcome to LliureX 21. Let's do some final adjustments")
+WLC_MSG=_("Welcome to LliureX 22. Let's do some final adjustments")
 USR_MSG=_("Configure new account")
 AVA_MSG=_("You can also define an avatar for your user")
 LNG_MSG=_("Locale")
@@ -139,8 +139,8 @@ class wizard(QWidget):
 		usr_frame=QFrame()
 		usr_frame.setObjectName("Dialog")
 		usr_layout=QGridLayout()
-		usr_layout.addWidget(wlc_msg,0,0,1,3,Qt.AlignCenter|Qt.AlignBottom)
-		usr_layout.addWidget(QLabel(USR_MSG),1,0,1,3,Qt.AlignCenter|Qt.AlignBottom)
+		usr_layout.addWidget(wlc_msg,0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
+		usr_layout.addWidget(QLabel(USR_MSG),1,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		usr_frame.setLayout(usr_layout)
 
 		self.usr_name=QLineEdit()
@@ -155,7 +155,7 @@ class wizard(QWidget):
 		self.usr_pass2.setPlaceholderText(LBL_PASS2)
 		usr_layout.addWidget(self.usr_pass2,5,0,1,1)
 		self.chk_login=QCheckBox(LBL_LOGIN)
-		usr_layout.addWidget(self.chk_login,6,2,1,1,Qt.Alignment(1))
+		usr_layout.addWidget(self.chk_login,5,1,1,1,Qt.Alignment(1))
 		self.box.addWidget(usr_frame,0,0,2,2,Qt.AlignCenter|Qt.AlignCenter)
 
 		self.usr_avatar=QPushButton()
@@ -163,7 +163,7 @@ class wizard(QWidget):
 		icn=QtGui.QIcon(self.avatar)
 		self.usr_avatar.setIcon(icn)
 		self.usr_avatar.setIconSize(QSize(128,128))
-		usr_layout.addWidget(self.usr_avatar,3,2,2,1,Qt.Alignment(1))
+		usr_layout.addWidget(self.usr_avatar,3,1,2,1)
 		
 		lng_frame=QFrame()
 		lng_frame.setObjectName("QFrame2")
@@ -181,7 +181,7 @@ class wizard(QWidget):
 		
 		self.hostname=QLineEdit()
 		self.hostname.setPlaceholderText("{} (optional)".format(HOST_MSG))
-		usr_layout.addWidget(self.hostname,6,2,1,1)
+		usr_layout.addWidget(self.hostname,6,1,1,1)
 
 		self.err_label=QLabel()
 		self.box.addWidget(self.err_label,0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
