@@ -17,9 +17,16 @@ done
 
 }
 
+set_bootnext()
+{
+	ID=$(efibootmgr | grep -i windows | grep -o [0-9]*)
+	[ ${#ID} -eq 4 ] && efibootmgr -n $ID
+}
+
 efibootmgr | grep -i "windows"
 if [ $? -ne 0 ]
 then
 	fix_efi
 fi	
-
+set_bootnext
+exit 0
