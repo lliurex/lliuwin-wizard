@@ -266,7 +266,7 @@ class wizard(QWidget):
 		hostname=self.hostname.text()
 		if hostname=="":
 			hostname="LliuWin"
-		cmd=['pkexec',os.path.join(SRC,'wizard_helper.sh'),self.usr_name.text(),self.usr_pass.text(),lang,hostname,autologin]
+		cmd=['pkexec',os.path.join(SRC,'wizard_helper.sh'),self.usr_name.text(),self.usr_pass.text(),lang,hostname,autologin,os.environ("USER")]
 		try:
 			subprocess.run(cmd)
 		except Exception as e:
