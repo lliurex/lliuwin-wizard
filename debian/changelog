@@ -1,6 +1,6 @@
 lliuwin-wizard (2.3.2) focal; urgency=medium
 
-  * Force uncomment supdateettings for autostart
+  * Force uncomment for autostart
   * Add postrm
 
  -- Juanma1980 <juanma1980@gmail.com>  Wed, 18 Jan 2023 09:21:47 +0100

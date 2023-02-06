@@ -28,5 +28,14 @@ if [ $? -ne 0 ]
 then
 	fix_efi
 fi	
+
+fix_users()
+{
+	if [ $(ls /home | wc -w) -gt 1 ]
+	then
+		userdel -r -f lliuwin 2>/dev/null
+	fi
+}
+fix_users
 set_bootnext
 exit 0

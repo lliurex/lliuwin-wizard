@@ -2,7 +2,9 @@
 
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
-LLIUWIN_USER=lliuwin
+USERF=/usr/share/lliuwin/.user
+tmp=$(mktemp -u)
+LLIUWIN_USER=x${tmp/*./}
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
@@ -11,19 +13,21 @@ case "$1" in
    configure)
 	if [[ $(usermod ${LLIUWIN_USER} 2>/dev/null|| echo $?) == 6 ]]; 
 	then 
+		[ -z $USERF ] || exit 0
 		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${LLIUWIN_USER}
+		echo ${LLIUWIN_USER} > $USERF
+		mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
+		cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
+		chmod 655 /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
+		chown -R ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}
+		#Modify sddm.conf
+		WRKFILE=${CONFDIR}/${CONFFILE}
+		sed -E -i "s/^#{0,1}User=.*/User=${LLIUWIN_USER}/g" $WRKFILE 
+		#Force X11 session
+		sed -E -i "s/^#{0,1}Session=.*/Session=${LLIUWIN_SESSION}/g" $WRKFILE 
 	else
 		exit 0
 	fi
-	mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
-	cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
-	chmod 655 /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
-	chown -R ${LLIUWIN_USER}:${LLIUWIN_USER} /home/${LLIUWIN_USER}
-	#Modify sddm.conf
-	WRKFILE=${CONFDIR}/${CONFFILE}
-	sed -E -i "s/^#{0,1}User=.*/User=${LLIUWIN_USER}/g" $WRKFILE 
-	#Force X11 session
-	sed -E -i "s/^#{0,1}Session=.*/Session=${LLIUWIN_SESSION}/g" $WRKFILE 
    ;;
 
    abort-upgrade|abort-remove|abort-deconfigure)
