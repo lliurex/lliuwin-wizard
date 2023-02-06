@@ -15,7 +15,6 @@ case "$1" in
 	then 
 		[ -z $USERF ] || exit 0
 		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${LLIUWIN_USER}
-		echo ${LLIUWIN_USER} > $USERF
 		mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
 		cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
 		chmod 655 /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART
@@ -46,4 +45,3 @@ esac
 #DEBHELPER#
 
 exit 0
-
