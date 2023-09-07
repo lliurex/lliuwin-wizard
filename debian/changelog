@@ -1,3 +1,10 @@
+lliuwin-wizard (2.3.2lliurex23) jammy; urgency=medium
+
+  * Jammy release
+  * TODO: update images
+
+ -- Juanma1980 <juanma1980@gmail.com>  Thu, 07 Sep 2023 12:48:28 +0200
+
 lliuwin-wizard (2.3.2) focal; urgency=medium
 
   * Force uncomment for autostart
