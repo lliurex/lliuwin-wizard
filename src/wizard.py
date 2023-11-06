@@ -2,10 +2,10 @@
 import getpass
 import sys
 import os
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
+from PySide2.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
 				QDialog,QGridLayout,QLineEdit,QFileDialog,QCheckBox,QFrame
-from PyQt5 import QtGui
-from PyQt5.QtCore import QSize,Qt
+from PySide2 import QtGui
+from PySide2.QtCore import QSize,Qt
 import gettext
 import subprocess
 import locale
@@ -52,6 +52,7 @@ class wizard(QWidget):
 		self.btnClose=False
 		self.err={1:ERR_PASS_MATCH,2:ERR_PASS_LEN,3:ERR_USR_LEN,4:ERR_PASS_LONG,5:ERR_USR_LONG}
 		(self.keymap,self.modmap)=self._load_keys()
+		self.setObjectName("Main")
 		self._render_gui()
 	#def init
 
@@ -187,13 +188,14 @@ class wizard(QWidget):
 		self.box.addWidget(self.err_label,0,0,1,2,Qt.AlignCenter|Qt.AlignBottom)
 		btn_Ko=QPushButton(_("Cancel"))
 		btn_Ko.clicked.connect(self._on_close)
-		self.box.addWidget(btn_Ko,1,0,1,1,Qt.AlignCenter|Qt.AlignBottom)
+		#self.box.addWidget(btn_Ko,1,0,1,1,Qt.AlignCenter|Qt.AlignBottom)
+		usr_layout.addWidget(btn_Ko,7,0,1,1,Qt.AlignCenter|Qt.AlignBottom)
 		btn_Ok=QPushButton(_("Continue"))
 		btn_Ok.clicked.connect(self._on_apply)
-		self.box.addWidget(btn_Ok,1,1,1,1,Qt.AlignCenter|Qt.AlignBottom)
+		usr_layout.addWidget(btn_Ok,7,1,1,1,Qt.AlignCenter|Qt.AlignBottom)
 		self.frm_Init.setLayout(self.box)
 		self.frm_Init.setObjectName("QFrame")
-		self.mbox.addWidget(self.frm_Init,0,0,1,1)
+		self.mbox.addWidget(self.frm_Init,0,0,1,1,Qt.AlignCenter)
 		self.setLayout(self.mbox)
 	#def _render_gui
 
@@ -323,6 +325,10 @@ class wizard(QWidget):
 
 	def _define_css(self):
 		css="""
+		#Main{
+			background-color:rgba(137,139,178,1);
+			border-image: url(:%s/background.svg) 0 0 0 0 stretch stretch;
+		}
 		#Message{
 			padding:10px;
 			margin:6px;
@@ -360,7 +366,7 @@ class wizard(QWidget):
 		QCheckBox{
 			margin:6px;
 		}
-		"""
+		"""%RSRC
 		return(css)
 		#def _define_css
 #class runomatic
