@@ -10,6 +10,7 @@ PASS=$2
 LANG=$3
 HOSTNAME=$4
 LOGIN=$5
+TMPUSER=$6
 
 function enable_sddm_autologin()
 {
@@ -60,6 +61,7 @@ function set_hostname()
 	sed -i "s/lliurexStandardPC.*/$HOSTNAME/" /etc/hosts	
 }
 
+echo $TMPUSER > /usr/share/lliuwin/.user
 useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
 echo "$USER:$PASS" | chpasswd
 set_locale
