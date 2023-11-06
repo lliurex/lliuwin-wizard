@@ -1,7 +1,12 @@
+lliuwin-wizard (2.3.2lliurex24) jammy; urgency=medium
+
+  * Jammy release. Minor cosmethic changes
+
+ -- Juanma1980 <juanma1980@gmail.com>  Mon, 06 Nov 2023 07:39:57 +0100
+
 lliuwin-wizard (2.3.2lliurex23) jammy; urgency=medium
 
-  * Jammy release
-  * TODO: update images
+  * Pre-release Jammy release
 
  -- Juanma1980 <juanma1980@gmail.com>  Thu, 07 Sep 2023 12:48:28 +0200
 
