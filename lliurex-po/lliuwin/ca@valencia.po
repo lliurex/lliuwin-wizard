@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 07:37+0200\n"
-"PO-Revision-Date: 2021-02-23 08:40+0000\n"
+"POT-Creation-Date: 2023-11-06 07:35+0100\n"
+"PO-Revision-Date: 2023-11-06 07:36+0100\n"
 "Last-Translator: Angels <gimenez_angcam@gva.es>\n"
 "Language-Team: Valencian <http://weblate.lliurex.net/projects/lliuwin-wizard/"
 "lliuwin-wizard/ca@valencia/>\n"
@@ -17,19 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.1\n"
-
-#: ../src/QImgDialog.py:26 ../src/wizard.py:43 ../src/wizard.py:182
-msgid "Cancel"
-msgstr "Cancel·la"
-
-#: ../src/QImgDialog.py:27
-msgid "Accept"
-msgstr "Accepta"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../src/wizard.py:23
-msgid "Welcome to LliureX 21. Let's do some final adjustments"
-msgstr "Us donem la benvinguda a LliureX 21! Encara falten els últims ajustos"
+msgid "Welcome to LliureX 22. Let's do some final adjustments"
+msgstr "Vos donem la benvinguda a LliureX 22! Encara falten els últims ajustos"
 
 #: ../src/wizard.py:24
 msgid "Configure new account"
@@ -39,86 +31,97 @@ msgstr "Configureu un compte nou"
 msgid "You can also define an avatar for your user"
 msgstr "Podeu seleccionar un avatar per a l'usuari"
 
-#: ../src/wizard.py:26 ../src/wizard.py:38
+#: ../src/wizard.py:26 ../src/wizard.py:39
 msgid "Locale"
 msgstr "Idioma"
 
 #: ../src/wizard.py:27
+msgid "Hostname"
+msgstr "Nom del pc"
+
+#: ../src/wizard.py:28
 msgid "Passwords don't match"
 msgstr "Les contrasenyes no coincideixen"
 
-#: ../src/wizard.py:28
+#: ../src/wizard.py:29
 msgid "Password length must be at least 6 characters long"
 msgstr "La contrasenya ha de tindre 6 caràcters com a mínim"
 
-#: ../src/wizard.py:29
+#: ../src/wizard.py:30
 msgid "Password length must be 30 characters maximun"
 msgstr "La contrasenya ha de tindre 30 caràcters com a màxim"
 
-#: ../src/wizard.py:30
+#: ../src/wizard.py:31
 msgid "User name must be at least 2 characters long"
 msgstr "El nom d'usuari ha de tindre com a mínim 2 caràcters"
 
-#: ../src/wizard.py:31
+#: ../src/wizard.py:32
 msgid "User name must be at most 30 characters long"
 msgstr "El nom d'usuari ha de tindre com a màxim 30 caràcters"
 
-#: ../src/wizard.py:32
+#: ../src/wizard.py:33
 msgid "Unknown error"
 msgstr "S'ha produït un error desconegut."
 
-#: ../src/wizard.py:33
+#: ../src/wizard.py:34
 msgid "Read carefully"
 msgstr "Llegiu amb deteniment."
 
-#: ../src/wizard.py:34
+#: ../src/wizard.py:35
 msgid "All ready"
 msgstr "Ja està tot preparat."
 
-#: ../src/wizard.py:35
+#: ../src/wizard.py:36
 msgid "Username"
 msgstr "Usuari"
 
-#: ../src/wizard.py:36
+#: ../src/wizard.py:37
 msgid "Password"
 msgstr "Contrasenya"
 
-#: ../src/wizard.py:37
+#: ../src/wizard.py:38
 msgid "Repeat password"
 msgstr "Repetiu la contrasenya"
 
-#: ../src/wizard.py:39
+#: ../src/wizard.py:40
 msgid "A new user will be created. Please verify the details below are correct"
 msgstr "Es crearà l'usuari. Verifiqueu que les dades són correctes."
 
-#: ../src/wizard.py:40
+#: ../src/wizard.py:41
 msgid "LliureX is now configured. When ready press start"
 msgstr "LliureX ja està configurat. Pulseu \"Inicia\" per a continuar."
 
-#: ../src/wizard.py:41
+#: ../src/wizard.py:42
 msgid "Enable autologin"
 msgstr "Activació de l'inici automàtic"
 
-#: ../src/wizard.py:42
+#: ../src/wizard.py:43
 msgid "Apply"
 msgstr "Aplica"
 
-#: ../src/wizard.py:44
+#: ../src/wizard.py:44 ../src/wizard.py:189
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: ../src/wizard.py:45
 msgid "Start"
 msgstr "Inicia"
 
-#: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:268
+#: ../src/wizard.py:177 ../src/wizard.py:282 ../src/wizard.py:283
 msgid "Valencian"
 msgstr "Valencià"
 
-#: ../src/wizard.py:173 ../src/wizard.py:267 ../src/wizard.py:270
+#: ../src/wizard.py:177 ../src/wizard.py:282 ../src/wizard.py:285
 msgid "Spanish"
 msgstr "Espanyol"
 
-#: ../src/wizard.py:173 ../src/wizard.py:267
+#: ../src/wizard.py:177 ../src/wizard.py:282
 msgid "English"
 msgstr "Anglés"
 
-#: ../src/wizard.py:185
+#: ../src/wizard.py:193
 msgid "Continue"
 msgstr "Continua"
+
+#~ msgid "Accept"
+#~ msgstr "Accepta"
