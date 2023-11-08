@@ -3,11 +3,11 @@
 CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
 USERF=/usr/share/lliuwin/.user
-LLIUWIN_USER=$(<USERF)
+LLIUWIN_USER=lliurex
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
-[ -z $LLIUWIN_USER ] && exit 0
+[ -e $USERF ] && exit 0
 case "$1" in
    remove|purge)
 		rm  -f /home/${LLIUWIN_USER}/.config/autostart/$AUTOSTART || echo ""

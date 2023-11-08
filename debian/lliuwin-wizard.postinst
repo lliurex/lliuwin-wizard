@@ -4,7 +4,7 @@ CONFDIR=/usr/lib/sddm/sddm.conf.d
 CONFFILE=80-lliurex.conf
 USERF=/usr/share/lliuwin/.user
 tmp=$(mktemp -u)
-LLIUWIN_USER=x${tmp/*./}
+LLIUWIN_USER=lliurex
 LLIUWIN_SESSION=plasma
 AUTOSTART=lliuwin-wizard.desktop
 set -e
@@ -13,7 +13,7 @@ case "$1" in
    configure)
 	if [[ $(usermod ${LLIUWIN_USER} 2>/dev/null|| echo $?) == 6 ]]; 
 	then 
-		[ -z $USERF ] || exit 0
+		[ -e $USERF ] && exit 0
 		useradd -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ${LLIUWIN_USER}
 		mkdir -p /home/${LLIUWIN_USER}/.config/autostart/ 2>/dev/null
 		cp /usr/share/lliuwin/autostart/$AUTOSTART /home/${LLIUWIN_USER}/.config/autostart/
