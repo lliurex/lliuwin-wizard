@@ -1,6 +1,7 @@
-lliuwin-wizard (2.3.3.1) jammy; urgency=medium
+lliuwin-wizard (2.3.3.2) jammy; urgency=medium
 
   * Jammy release. Minor cosmethic changes
+  * lliuwin as default user
 
  -- Juanma1980 <juanma1980@gmail.com>  Mon, 06 Nov 2023 07:39:57 +0100
 
