@@ -305,7 +305,9 @@ class wizard(QWidget):
 	#def _on_finish
 
 	def _on_close(self,*args):
-		cmd=["loginctl","terminate-user",USER]
+		#loginctrl broken on 23 231109
+		#cmd=["loginctl","terminate-user",USER]
+		cmd=["loginctl","kill-user",USER]
 		try:
 			subprocess.run(cmd)
 		except Exception as e:
