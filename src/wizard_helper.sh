@@ -61,10 +61,23 @@ function set_hostname()
 	sed -i "s/lliurexStandardPC.*/$HOSTNAME/" /etc/hosts	
 }
 
+function enable_swap()
+{
+	if [ "x""$(grep -o swapfile /etc/fstab)" == "x" ]
+	then
+		fallocate -l 1G /swapfile
+		chmod 0600 /swapfile
+		mkswap -U clear /swapfile
+		swapon /swapfile
+		echo "/swapfile none swap defaults 0 0" >> /etc/fstab
+	fi
+}
+
 echo $TMPUSER > /usr/share/lliuwin/.user
 useradd -s /bin/bash -m -U -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare $USER
 echo "$USER:$PASS" | chpasswd
 set_locale
 set_hostname
+enable_swap
 rm /home/$USER/.config/autostart/lliuwin-wizard.desktop 2>/dev/null
 [[ $LOGIN != "" ]] && enable_sddm_autologin || disable_sddm_autologin
