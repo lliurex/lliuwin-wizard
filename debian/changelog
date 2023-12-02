@@ -1,3 +1,9 @@
+lliuwin-wizard (2.4-1lliurex21) focal; urgency=medium
+
+  * Backport from jammy
+
+ -- Juanma1980 <juanma1980@gmail.com>  Sat, 02 Dec 2023 10:22:56 +0100
+
 lliuwin-wizard (2.3.2) focal; urgency=medium
 
   * Force uncomment for autostart
