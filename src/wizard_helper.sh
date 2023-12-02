@@ -67,7 +67,7 @@ function enable_swap()
 	then
 		fallocate -l 1G /swapfile
 		chmod 0600 /swapfile
-		mkswap -U clear /swapfile
+		mkswap /swapfile
 		swapon /swapfile
 		echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 	fi
