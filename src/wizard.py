@@ -20,7 +20,7 @@ _ = gettext.gettext
 SRC="/usr/share/lliuwin"
 RSRC=os.path.join(SRC,"rsrc")
 #Translations
-WLC_MSG=_("Welcome to LliureX 22. Let's do some final adjustments")
+WLC_MSG=_("Welcome to LliureX 23. Let's do some final adjustments")
 USR_MSG=_("Configure new account")
 AVA_MSG=_("You can also define an avatar for your user")
 LNG_MSG=_("Locale")
