@@ -11,4 +11,4 @@ Manual install:
  * polkit: Action and rule for adduser
 
 LliureX install:
- * Chroot to the image and install this package. Lliurex user will be created if not exists and sddm configured with autologin enabled. The package will install the autostart desktop at /home/lliurex/.config/autostart folder.
+ * Chroot into the image and install this package. Lliuwin user will be created if needed and sddm configured with autologin enabled. The package will install the autostart desktop in /home/lliuwin/.config/autostart.
