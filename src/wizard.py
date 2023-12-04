@@ -372,7 +372,10 @@ class wizard(QWidget):
 		return(css)
 		#def _define_css
 #class runomatic
-
+cmd=["kwriteconfig5","--file","kscreenlockerrc","--group","Daemon","--key","Autolock","false"]
+subprocess.run(cmd)
+cmd=["qdbus","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
+subprocess.run(cmd)
 app=QApplication(["LliuWin Wizard"])
 wizardLauncher=wizard()
 app.exec_()
