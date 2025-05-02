@@ -2,10 +2,10 @@
 import getpass
 import sys
 import os
-from PySide2.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
+from PySide6.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
 				QDialog,QGridLayout,QLineEdit,QFileDialog,QCheckBox,QFrame
-from PySide2 import QtGui
-from PySide2.QtCore import QSize,Qt
+from PySide6 import QtGui
+from PySide6.QtCore import QSize,Qt
 import gettext
 import subprocess
 import locale
@@ -376,7 +376,7 @@ class wizard(QLabel):
 #class runomatic
 cmd=["kwriteconfig5","--file","kscreenlockerrc","--group","Daemon","--key","Autolock","false"]
 subprocess.run(cmd)
-cmd=["qdbus","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
+cmd=["qdbus6","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
 subprocess.run(cmd)
 app=QApplication(["LliuWin Wizard"])
 wizardLauncher=wizard()
