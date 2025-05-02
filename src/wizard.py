@@ -2,10 +2,10 @@
 import getpass
 import sys
 import os
-from PySide2.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
+from PySide6.QtWidgets import QApplication, QLabel, QWidget, QComboBox,QPushButton,QVBoxLayout,\
 				QDialog,QGridLayout,QLineEdit,QFileDialog,QCheckBox,QFrame
-from PySide2 import QtGui
-from PySide2.QtCore import QSize,Qt
+from PySide6 import QtGui
+from PySide6.QtCore import QSize,Qt
 import gettext
 import subprocess
 import locale
@@ -45,15 +45,17 @@ CANCEL=_("Cancel")
 START=_("Start")
 USER="lliuwin"
 
-class wizard(QWidget):
+class wizard(QLabel):
 	def __init__(self):
 		super().__init__()
 		self.dbg=True
 		self.btnClose=False
 		self.err={1:ERR_PASS_MATCH,2:ERR_PASS_LEN,3:ERR_USR_LEN,4:ERR_PASS_LONG,5:ERR_USR_LONG}
 		(self.keymap,self.modmap)=self._load_keys()
-		self.setObjectName("Main")
 		self._render_gui()
+		self.setObjectName("Main")
+		logo=QtGui.QPixmap(os.path.join(RSRC,"background.svg"))
+		self.setPixmap(logo)
 	#def init
 
 	def _debug(self,msg):
@@ -374,7 +376,7 @@ class wizard(QWidget):
 #class runomatic
 cmd=["kwriteconfig5","--file","kscreenlockerrc","--group","Daemon","--key","Autolock","false"]
 subprocess.run(cmd)
-cmd=["qdbus","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
+cmd=["qdbus6","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
 subprocess.run(cmd)
 app=QApplication(["LliuWin Wizard"])
 wizardLauncher=wizard()
