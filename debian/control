@@ -9,6 +9,6 @@ Homepage: http://lliurex.net
 
 Package: lliuwin-wizard
 Architecture: all
-Depends: python3-pyqt5, efibootmgr
+Depends: python3-pyside6, efibootmgr
 Description: Lliuwin first launch Wizard
 
