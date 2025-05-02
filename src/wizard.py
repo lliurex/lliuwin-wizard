@@ -67,15 +67,16 @@ class wizard(QLabel):
 		keymap={}
 		self.closeKey=False
 		for key,value in vars(Qt).items():
-			if isinstance(value, Qt.Key):
-				keymap[value]=key.partition('_')[2]
+			if "key" in key.lower():
+				keymap[value]=key
+		print(keymap)
 		modmap={
-					Qt.ControlModifier: keymap[Qt.Key_Control],
-					Qt.AltModifier: keymap[Qt.Key_Alt],
-					Qt.ShiftModifier: keymap[Qt.Key_Shift],
-					Qt.MetaModifier: keymap[Qt.Key_Meta],
-					Qt.GroupSwitchModifier: keymap[Qt.Key_AltGr],
-					Qt.KeypadModifier: keymap[Qt.Key_NumLock]
+					Qt.ControlModifier: Qt.Key_Control,
+					Qt.AltModifier: Qt.Key_Alt,
+					Qt.ShiftModifier: Qt.Key_Shift,
+					Qt.MetaModifier: Qt.Key_Meta,
+					Qt.GroupSwitchModifier: Qt.Key_AltGr,
+					Qt.KeypadModifier: Qt.Key_NumLock
 					}
 		return(keymap,modmap)
 	
