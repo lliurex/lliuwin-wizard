@@ -20,7 +20,7 @@ _ = gettext.gettext
 SRC="/usr/share/lliuwin"
 RSRC=os.path.join(SRC,"rsrc")
 #Translations
-WLC_MSG=_("Welcome to LliureX 23. Let's do some final adjustments")
+WLC_MSG=_("Welcome to LliureX 25. Let's do some final adjustments")
 USR_MSG=_("Configure new account")
 AVA_MSG=_("You can also define an avatar for your user")
 LNG_MSG=_("Locale")
@@ -54,7 +54,9 @@ class wizard(QLabel):
 		(self.keymap,self.modmap)=self._load_keys()
 		self._render_gui()
 		self.setObjectName("Main")
-		logo=QtGui.QPixmap(os.path.join(RSRC,"background.svg"))
+		self.closeKey=False
+		#logo=QtGui.QPixmap(os.path.join(RSRC,"background.svg"))
+		logo=QtGui.QPixmap(os.path.join(RSRC,"bkg25.png"))
 		self.setPixmap(logo)
 	#def init
 
@@ -65,7 +67,6 @@ class wizard(QLabel):
 
 	def _load_keys(self):
 		keymap={}
-		self.closeKey=False
 		for key,value in vars(Qt).items():
 			if "key" in key.lower():
 				keymap[value]=key
@@ -81,7 +82,7 @@ class wizard(QLabel):
 		return(keymap,modmap)
 	
 	def closeEvent(self,event):
-		if self.close==False: 
+		if self.closeKey==False: 
 			event.ignore()
 	#def closeEvent
 	
@@ -316,6 +317,7 @@ class wizard(QLabel):
 		except Exception as e:
 			print(str(e))
 			return False
+		self.closeKey=True
 		self.close()
 
 	def showMessage(self,msg,status="error",height=252):
@@ -381,5 +383,5 @@ cmd=["qdbus6","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
 subprocess.run(cmd)
 app=QApplication(["LliuWin Wizard"])
 wizardLauncher=wizard()
-app.exec_()
+app.exec()
 
