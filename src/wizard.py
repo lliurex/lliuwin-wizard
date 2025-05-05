@@ -381,6 +381,8 @@ cmd=["kwriteconfig5","--file","kscreenlockerrc","--group","Daemon","--key","Auto
 subprocess.run(cmd)
 cmd=["qdbus6","org.freedesktop.ScreenSaver","/ScreenSaver","configure"]
 subprocess.run(cmd)
+cmd=["qdbus6","org.kde.kglobalaccel","/kglobalaccel","org.kde.KGlobalAccel.blockGlobalShortcuts","true"]
+subprocess.run(cmd)
 app=QApplication(["LliuWin Wizard"])
 wizardLauncher=wizard()
 app.exec()
